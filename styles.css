@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=League+Spartan:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Sigmar+One&family=Titan+One&display=swap&https://fonts.googleapis.com/css2?family=Titan+One&https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=League+Spartan:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 * {
     font-family: 'DM Sans', sans-serif;
@@ -21,6 +21,7 @@ li a {
 li a:hover {
     border-bottom: 3px solid #AA1F2E;
 }
+
 
 footer a {
     transition: 0.3s ease-in-out;
@@ -109,7 +110,7 @@ footer a {
   --red: #aa1f2e;
   --blue: #0c233f;
   --white: #ffffff;
-  --bg: #121212;
+  --bg: #0c233f;
   
 }
 
@@ -160,6 +161,27 @@ body {
   background: var(--bg);
 }
 
+
+#hero .relative {
+  position: relative;
+ 
+}
+
+#hero .relative::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("img/theatre.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1; /* Places it behind container content */
+}
+
+
 #speakers .container {
   max-width: 100rem;
   padding: 0 1rem;
@@ -171,9 +193,10 @@ body {
 }
 
 .section-heading {
+  font-family: 'Sigmar One';
   font-size: 5rem;
-  color: var(--white);
-  padding: 7rem 0;
+  color: var(--red);
+  padding: 8rem 0;
 }
 
 #speakers {
@@ -355,18 +378,120 @@ body {
 }
 
 
+#stats{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto;
+  display: flex;
+  padding: 7rem 0;
+}
+.wrapper{
+  /* border: 1px solid white; */
+  position: absolute;
+  width: 50vw;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+
+}
+
+.stats-container{
+  width: 28vmin;
+  height: 28vmin;
+  
+  /* border: 1px solid orange; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1em 0;
+  position: relative;
+  font-size: 16px;
+  border-radius: 0.5em;
+  background-color: #1b1c1f;
+  
+}
+
+i{
+  color: red;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+span.num{
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  font-size: 3em;
+}
+
+span.text{
+  color: #e0e0e0;
+  font-size: 1em;
+  text-align: center;
+  pad: 0.7em 0;
+  font-weight: 800;
+  line-height: 0;
 
 
 
+}
+
+@media screen and (max-width: 1024px){
+  .wrapper{
+    width: 85vw;
+  }
+  .container{
+    height: 26vmin;
+    width: 26vmin;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .wrapper{
+    width: 90vw;
+    flex-wrap: wrap;
+    gap: 30px;
+
+  }
+
+  .container{
+    width: calc(50% - 40px);
+    height: 30vmin;
+    font-size: 14px;
+
+  }
+}
+
+@media screen and (max-with: 480px){
+  .wrapper{
+    gap: 15px;
+
+  }
+
+  .container{
+    width: 100%;
+    height: 25vmin;
+    font-size: 8px;
+
+  }
+}
 
 #cool-art{
     width: 100%;
-    height: 500px;
-    background-image: url('img/fire-chicken-over-line.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    height: 700px;
+    background: var(--red);
+   margin-bottom: 100px;
 
+}
+#cool-art h1{
+  color: white;
+}
+#cool-art img{
+  position: relative;
+  
 }
 
 
@@ -385,9 +510,10 @@ body {
 #about{
   position: relative;
   max-width: 800px;
-  margin: 50px auto;
-  padding: 0;
+  margin: auto;
+  padding: 0 0 7rem;
   color: white;
+  
 }
 
 
@@ -509,7 +635,7 @@ body {
 
 #about-the-ssc{
   position: relative;
-  max-width: 800px;
+  width: 800px;
   margin: 50px auto;
   padding: 0;
   color: white;
@@ -564,8 +690,8 @@ body {
     text-align: center;
     margin: 0px;
     padding: 5px;
-    border: 2px solid #fff;
-    border-radius: 2rem;
+    /* border: 2px solid #fff;
+    border-radius: 2rem; */
 }
 
 
@@ -749,7 +875,7 @@ body {
 
 .faq {
     margin: 0;
-    padding: 0;
+    padding: 7rem;
     box-sizing: border-box;
     justify-content: center;
     
@@ -853,4 +979,143 @@ body {
   
 
 
+#big-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20rem 0;
+  width: 60%; /* Adjust this value as needed */
+  max-width: 600px; /* Ensures it doesn’t get too wide */
+  margin: 0 auto; /* Centers it horizontally */
+
+}
+
+
+#big-text h1{
   
+  margin: auto;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+
+
+#big-text span{
+  font-family: "Titan One", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: auto;
+  display: inline-block;
+  overflow: hidden;
+  animation: 1.5s swift-up ease-in-out forwards;	
+}
+
+#big-text i{
+  color: var(--red);
+  font-style: normal;
+  margin: auto;
+  position: relative;
+  top: 105px;
+  animation: 1.5s swift-up ease-in-out forwards;
+}
+
+@keyframes swift-up {
+  to {
+    top: 0;
+  }
+}
+
+@media screen and (max-width: 1000px){
+	.container{
+		width: auto;
+		margin: auto;
+	}
+	
+	:root{
+		--headingSize: 20px;
+	}
+}
+
+
+#big-text .container {
+  display: flex;
+  flex-direction: column;
+  
+}
+#big-text .container span{
+  animation: shake 0.5s infinite;
+  font-size: 8rem;
+
+  position: relative;
+  margin: auto;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    var(--red) 0%,
+    orange 50%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#big-text .container h1{
+  
+  font-size: 3rem;
+  background-image: linear-gradient(
+    -225deg,
+    var(--red) 0%,
+    rgb(255, 157, 0) 50%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@keyframes shake {
+  0% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+  10% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  100% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+}
+
+
+

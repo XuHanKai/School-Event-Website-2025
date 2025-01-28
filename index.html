@@ -43,7 +43,7 @@
           <p class="text-lg font-medium text-white mt-1 text-center w-full">days</p>
       </div>
 
-      <h3 class="font-semibold text-2xl text-white-900 py-2.5">:</h3>
+      <h3 class="font-semibold text-2xl text-white py-2.5">:</h3>
       <div class="w-16">
           <div class="bg-[#AA1F2E] py-4 rounded-xl overflow-hidden">
               <h3 class="countdown-hours font-semibold text-2xl text-white text-center">
@@ -53,7 +53,7 @@
           <p class="text-lg font-medium text-white mt-1 text-center w-full">hours</p>
       </div>
 
-      <h3 class="font-semibold text-2xl text-white-900 py-2.5">:</h3>
+      <h3 class="font-semibold text-2xl text-white py-2.5">:</h3>
       <div class="w-16">
           <div class="bg-[#AA1F2E] py-4 rounded-xl overflow-hidden">
               <h3 class="countdown-minutes font-semibold text-2xl text-white text-center">
@@ -63,7 +63,7 @@
           <p class="text-lg font-medium text-white mt-1 text-center w-full">minutes</p>
       </div>
 
-      <h3 class="font-semibold text-2xl text-white-900 py-2.5">:</h3>
+      <h3 class="font-semibold text-2xl text-white py-2.5">:</h3>
       <div class="w-16">
           <div class=" bg-[#AA1F2E] py-4 rounded-xl overflow-hidden">
               <h3 class="countdown-seconds font-semibold text-2xl text-white text-center">
@@ -75,31 +75,36 @@
   </div>
                       
   <!-- Hero section -->
-  <div class="hero relative px-6 pt-14 lg:px-8">
-      <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-          <div class="text-center">
-              <h1 class="text-5xl font-semibold tracking-tight text-white sm:text-7xl">LOdown LIVE</h1>
-              <p class="mt-8 text-lg font-medium sm:text-xl/8">Random text... Random text... Random text... Random text... Random text... Random text... </p>
-              <div class="mt-10 flex items-center justify-center gap-x-6">
-                  <a href="#" class="rounded-md bg-[#AA1F2E] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#c42131]">RSVP</a>
-                  <a href="#" class="text-sm/6 font-semibold text-white">Learn more <span aria-hidden="true">→</span></a>
-              </div>
-          </div>
-      </div>
-  </div>
-
+  <section id = "hero">
+    <div class="hero relative px-6 pt-14 lg:px-8" >
+        <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+            <div class="text-center">
+                <h1 class="text-5xl font-semibold tracking-tight text-white sm:text-7xl">LOdown LIVE</h1>
+                <p class="mt-8 text-lg font-medium sm:text-xl/8 text-white">Feb 16 2025 | Lillian Osborne High School</p>
+                <div class="mt-10 flex items-center justify-center gap-x-6">
+                    <a href="#" class="rounded-md bg-[#AA1F2E] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#c42131]">RSVP</a>
+                    <a href="#" class="text-sm/6 font-semibold text-white">Learn more <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
   <!-- Intro art-->
   <section id = "cool-art">
-    
+    <h1 class="text-center section-heading">7 Hours of Powerful Talks...</h1>
+    <image src = "img/fire-chicken-over-line.png"></image>
     
   </section>
 
 
 
   <!-- About-->
-   <section id="about">
+  <div class="container">
     <h1 class="text-center section-heading">About LOdown</h1>
-    <div>
+  </div>
+   <section id="about">
+    
+    <div class = "container">
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam ipsum at, quas id
        veritatis non assumenda adipisci cum repellendus vel in dolores dignissimos ipsam 
        maiores nihil officia. Quisquam, sed harum?
@@ -110,17 +115,37 @@
 
    </section>
 
-   <!-- Break art-->
-  <section id = "break-art">
-    <img style = "width: 30%; justify-content: center;"src="img\fire-chicken-balloon.png">
-  </section>
+   
 
 
 
   <!-- stats -->
+
   <section id="stats">
-    <div>
-      numbers and stuff
+    <div class = "container">
+      
+    </div>
+    <div class = "wrapper">
+      <div class = "stats-container">
+        <i class = "fas fa-smile"></i>
+        <span class = "num" data-val="300">000</span>
+        <span class="text">Attendees</span>
+      </div>
+      <div class = "stats-container">
+        <i class = "fas fa-comment"></i>
+        <span class = "num" data-val="10">000</span>
+        <span class="text">Topics</span>
+      </div>
+
+      
+
+      <div class = "stats-container">
+        <i class = "fas fa-microphone"></i>
+        <span class = "num" data-val="25">000</span>
+        <span class="text">Talks Given</span>
+      </div>
+
+     
     </div>
   </section>
 
@@ -242,7 +267,22 @@
 
 </section>
 
+<!-- big text-->
+ 
+<section id = "big-text">
+  <h1 class="swift-up-text">The THEME for discussion this year is...</h1>
+  <div class="container">
+    <span class="animate-character">Amelioration</span>
+    <h1 class="animate-character">Perspectives on Self Improvement</h1>
+  </div>
+  
+</section>
 
+
+  <!-- Break art-->
+  <section id = "break-art">
+    <img style = "width: 30%; justify-content: center;"src="img\fire-chicken-balloon.png">
+  </section>
 
 
 
@@ -509,11 +549,15 @@
     <div class = "container">
         <h1 class="text-center section-heading">About the SSC</h1>
     </div>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi cupiditate mollitia fugiat esse, nulla possimus sit minima commodi sed debitis, voluptates quos iste modi architecto. Necessitatibus commodi dolorem nihil quidem!
-
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi cupiditate 
+    mollitia fugiat esse, nulla possimus sit minima commodi sed debitis, 
+    voluptates quos iste modi architecto. Necessitatibus commodi dolorem nihil quidem!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi cupiditate 
+    mollitia fugiat esse, nulla possimus sit minima commodi sed debitis, 
+    voluptates quos iste modi architecto. Necessitatibus commodi dolorem nihil quidem!
     </div>
     <!-- OUR TEAM -->
-
+  </section>
   <section id="our-team">
     <div class = "container">
         <h1 class="text-center section-heading">Our Team</h1>
@@ -770,20 +814,6 @@
           </details>
           <details>
             <summary>
-              <span class="accordion-title">
-                What is LOdown LIVE Theme This Year:
-              </span>
-              <span class="accordion-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M6 9l6 6l6 -6" />
-                </svg></span>
-            </summary>
-            <div class="accordion-content">
-              The theme of LOdown LIVE this year is Amelioration: Perspectives on Self Improvement.
-            </div>
-          </details>
-          <details>
-            <summary>
               <span class="accordion-title">Will There Be Food At This Event + What Time:</span>
               <span class="accordion-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -892,7 +922,7 @@
               </a>
       
               <!-- Google maps tooltip -->
-              <span class="absolute top-1/2 -translate-y-1/2 translate-x-40 px-3 py-2 text-xs bg-white text-white rounded opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="absolute top-1/2 -translate-y-1/2 translate-x-40 px-3 py-2 text-xs bg-white text-black rounded opacity-0 group-hover:opacity-100 transition-opacity">
                   Open in Google Maps
               </span>
           </div>

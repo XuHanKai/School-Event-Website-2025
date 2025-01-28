@@ -34,6 +34,7 @@ blocks.forEach(block => {
   // Check if the block is entering the viewport
   const isVisible = rect.top <= windowHeight-80;
 
+
   if (isVisible) {
     block.style.opacity = 1;
     block.style.transform = 'translateX(0)';
@@ -226,38 +227,118 @@ window.addEventListener('resize', get_height);
 
 
 function countdown() {
-  const target_date = new Date("2025-01-01T07:00:00Z");
+  const target_date = new Date("2025-01-30T07:00:00Z").getTime();
+
   const days_counter = document.querySelector('.countdown-days');
   const hours_counter = document.querySelector('.countdown-hours');
   const minutes_counter = document.querySelector('.countdown-minutes');
   const seconds_counter = document.querySelector('.countdown-seconds');
 
+  // Check if elements exist
+  if (!days_counter || !hours_counter || !minutes_counter || !seconds_counter) {
+    console.error("Countdown elements not found.");
+    return;
+  }
+  let interval;
   function update_timer() {
-      const now = new Date();
-      const difference = target_date - now;
+    const now = new Date().getTime();
+    const difference = target_date - now;
 
-      if (difference <= 0) {
-          days_counter.textContent = '0';
-          hours_counter.textContent = '0';
-          minutes_counter.textContent = '0';
-          seconds_counter.textContent = '0';
-          clearInterval(interval);
-          return;
-      }
+    if (difference <= 0) {
+      days_counter.textContent = '0';
+      hours_counter.textContent = '0';
+      minutes_counter.textContent = '0';
+      seconds_counter.textContent = '0';
+      clearInterval(interval);
+      return;
+    }
 
-      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-      days_counter.textContent = days;
-      hours_counter.textContent = hours;
-      minutes_counter.textContent = minutes;
-      seconds_counter.textContent = seconds;
+    days_counter.textContent = days;
+    hours_counter.textContent = hours;
+    minutes_counter.textContent = minutes;
+    seconds_counter.textContent = seconds;
   }
 
-  const interval = setInterval(update_timer, 1000);
+  // Run update immediately and every second
+  interval = setInterval(update_timer, 1000);
   update_timer();
+
+  
 }
 
-document.addEventListener('DOMContentLoaded', countdown);
+document.addEventListener("DOMContentLoaded", countdown);
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const target = document.querySelector("#stats");
+
+  const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            let valueDisplays = document.querySelectorAll(".num");
+            let interval = 5000;
+            valueDisplays.forEach((valueDisplay) => {
+              let startValue = 0;
+              let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+              console.log(endValue);
+              let duration = Math.floor(interval / endValue);
+              let counter = setInterval(function(){
+                startValue += 1;
+                valueDisplay.textContent = startValue;
+                if(startValue == endValue){
+                    clearInterval(counter);
+                }
+              }, duration);
+            
+            });
+              observer.unobserve(target); // Stop observing if you only want it to trigger once
+          }
+      });
+  }, { threshold: 0.5 }); // Trigger when 50% of the section is visible
+
+  observer.observe(target);
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+            const target = document.querySelector(".swift-up-text");
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                      const swiftUpElements = document.querySelectorAll('.swift-up-text');
+                        swiftUpElements.forEach(elem => {
+
+                          const words = elem.textContent.split(' ');
+                          elem.innerHTML = '';
+                        
+                          words.forEach((el, index) => {
+                            words[index] = `<span><i>${words[index]}</i></span>`;
+                          });
+                        
+                          elem.innerHTML = words.join(' ');
+                        
+                          const children = document.querySelectorAll('span > i');
+                          children.forEach((node, index) => {
+                            node.style.animationDelay = `${index * .2}s`;
+                          });
+                        
+                        });
+                        observer.unobserve(target); // Stop observing if you only want it to trigger once
+                    }
+                });
+            }, { threshold: 0.5 }); // Trigger when 50% of the section is visible
+
+            observer.observe(target);
+        });
